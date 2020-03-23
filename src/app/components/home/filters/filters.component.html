@@ -1,0 +1,59 @@
+ <!-- Card -->
+ <mdb-card class="m-0">
+    <!--Card content-->
+    <mdb-card-body>
+       <!--Title-->
+       <mdb-card-title>
+          <h4>Choose a Department</h4>
+       </mdb-card-title>
+       
+       <!--Text-->
+       <mdb-card-text>
+
+          <div class="list-group">
+              <a class="list-group-item list-group-item-action flex-column align-items-start" 
+                *ngFor="let item of departmentList;index as i"
+                [ngClass]="{'active': selectedDepartment == item.DepartmentId}"
+                (click)="onSelectDepartment(item)"
+                >
+                <div class="d-flex w-100 justify-content-between">
+                  <h6 class="mb-1">{{item.Name}}</h6>
+                  <!-- <small>3 days ago</small> -->
+                </div>
+              </a>
+            </div>
+       </mdb-card-text>
+    </mdb-card-body>
+ </mdb-card>
+
+ <!-- Card -->
+
+ 
+ <!-- Card -->
+ <mdb-card class="m-0 mt-4">
+    <!--Card content-->
+    <mdb-card-body>
+       <!--Title-->
+       <mdb-card-title>
+          <h4>Choose a Category</h4>
+       </mdb-card-title>
+       
+       <!--Text-->
+       <mdb-card-text>
+
+          <div class="list-group">
+              <a class="list-group-item list-group-item-action flex-column align-items-start"
+                *ngFor="let item of filteredCategoryList"
+                [ngClass]="{'active': selectedCategory == item.CategoryId}"
+                (click)=onSelectCategory(item)>
+                <div class="d-flex w-100 justify-content-between">
+                  <h6 class="mb-1">{{item.Name}}</h6>
+                  <!-- <small>3 days ago</small> -->
+                </div>
+              </a>
+            </div>
+       </mdb-card-text>
+    </mdb-card-body>
+ </mdb-card>
+
+ <!-- Card -->
